@@ -1,0 +1,34 @@
+name: Deploy to Azure Storage
+
+on:
+  push:
+    branches:
+      - main  # Trigger this action when pushing to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+    # Step 1: Check out the repository code
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Step 2: Set up Azure CLI
+    - name: Set up Azure CLI
+      uses: azure/setup-azurecli@v1
+
+    # Step 3: Azure login using service principal (you need to create this in Azure AD)
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    # Step 4: Upload files to Azure Storage Blob Container ($web)
+    - name: Deploy to Azure Static Website
+      run: |
+        az storage blob upload-batch \
+          -d '$web' \
+          -s . \
+          --account-name <charlesdevopsdashboard> \
+          --auth-mode key
