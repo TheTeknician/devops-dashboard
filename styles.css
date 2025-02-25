@@ -1,0 +1,115 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+}
+
+h1, h2 {
+    color: #34495e;
+}
+
+/* Header Navigation */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+header nav ul li {
+    margin-left: 20px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+header nav ul li a:hover {
+    color: #e74c3c;
+}
+
+/* Hero Section */
+.hero {
+    background: #34495e;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.cta-btn {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.cta-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Metrics Section */
+.metrics {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+.metric-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 25%;
+    transition: transform 0.3s;
+}
+.metric-box:hover {
+    transform: translateY(-5px);
+}
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.metric-value.success {
+    color: #27ae60;
+}
+.metric-value.warning {
+    color: #f39c12;
+}
+.metric-value.error {
+    color: #e74c3c;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
